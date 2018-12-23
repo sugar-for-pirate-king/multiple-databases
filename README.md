@@ -20,7 +20,7 @@ Maybe in production you will be using subdomain for each vendor, but for simplif
 
   - **URL**
 
-  `/api/v1/users`
+    `/api/v1/users`
 
   - **Method**
 
@@ -62,7 +62,7 @@ Maybe in production you will be using subdomain for each vendor, but for simplif
 
   - **URL**
 
-  `/api/v1/users`
+    `/api/v1/users`
 
   - **Method**
 
