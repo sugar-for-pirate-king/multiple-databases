@@ -1,24 +1,108 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Application with multiple databases.
 
-Things you may want to cover:
+System Dependencies :
+- Ruby 2.5.3
+- Rails 5.2.2
+- MySQL
 
-* Ruby version
+## Getting Started
+In this application, we will generate 3 databases (`database.yml`, `database_vendor_1.yml` and `database_vendor_2.yml`). In SASS Application maybe you want to make isolation data with separate database for each vendor.
 
-* System dependencies
+This is not production project, that means this is just for experiment purpose.
 
-* Configuration
+## API Enpoints
+Maybe in production you will be using subdomain for each vendor, but for simplify concept, i not using subdomain, but im using just body params.
 
-* Database creation
+### Show Users
+- **URL**
 
-* Database initialization
+  `/api/v1/users`
 
-* How to run the test suite
+- Method
 
-* Services (job queues, cache servers, search engines, etc.)
+  `GET`
 
-* Deployment instructions
+- **URL Params**
 
-* ...
+  **Required**
+
+  `vendor_id=[integer]`
+
+- **Data Params**
+
+  None.
+
+- **Success Response**
+
+  ```json
+  {
+    "users": [
+      {
+        "username": "mahou_kagami"
+      },
+      {
+        "username": "tomewo_awasu"
+      }
+    ]
+  }
+  ```
+
+- **Note**
+  I think that will be clean if we pass the `vendor_id` in headers. But for now, i this it's enought :p.
+
+
+### Create New User
+- **URL**
+
+  `/api/v1/users`
+
+- Method
+
+  `POST`
+
+- **URL Params**
+
+  **Required**
+
+  `vendor_id=[integer]`
+
+- **Data Params**
+
+  ```json
+  {
+    "user": {
+      "username": "kotoxri"
+    }
+  }
+  ```
+
+- **Success Response**
+
+  ```json
+  {
+    "user": {
+      "username": "kotoxri"
+    }
+  }
+  ```
+
+## Note
+
+Migration still doesn't work in multiple databases, so we will use traditional export dan import in mysql.
+
+1. Export mysql with command: `$> mysqldump -u [username] -p [database_name] > [database_name].sql`
+2. Import mysql with command:
+   - `$> mysql -u root -p`
+   - `$> CREATE DATABASE new_database_name`
+   - `$> exit`
+   - `$> mysql -u [username] -p [new_database_name] < [database_name].sql``
+
+## License
+MIT License
+
+All Right Reserved
+
+
+
