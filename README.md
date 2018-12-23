@@ -104,7 +104,7 @@ Maybe in production you will be using subdomain for each vendor, but for simplif
 Migration still doesn't work in multiple databases, so we will use traditional export dan import in mysql.
 
 1. Export mysql with command:
-   `$> mysqldump -u [username] -p [database_name] > [database_name].sql`
+   - `$> mysqldump -u [username] -p [database_name] > [database_name].sql`
 2. Import mysql with command:
    - `$> mysql -u root -p`
    - `$> CREATE DATABASE new_database_name`
