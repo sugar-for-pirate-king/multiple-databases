@@ -7,7 +7,7 @@ System Dependencies :
 - Rails 5.2.2
 - MySQL
 
-## Getting Started
+## Overview
 In this application, we will generate 3 databases (`database.yml`, `database_vendor_1.yml` and `database_vendor_2.yml`). In SASS Application maybe you want to make isolation data with separate database for each vendor.
 
 This is not production project, that means this is just for experiment purpose.
@@ -103,7 +103,8 @@ Maybe in production you will be using subdomain for each vendor, but for simplif
 
 Migration still doesn't work in multiple databases, so we will use traditional export dan import in mysql.
 
-1. Export mysql with command: `$> mysqldump -u [username] -p [database_name] > [database_name].sql`
+1. Export mysql with command:
+   `$> mysqldump -u [username] -p [database_name] > [database_name].sql`
 2. Import mysql with command:
    - `$> mysql -u root -p`
    - `$> CREATE DATABASE new_database_name`
