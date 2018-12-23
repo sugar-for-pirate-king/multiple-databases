@@ -15,78 +15,89 @@ This is not production project, that means this is just for experiment purpose.
 ## API Enpoints
 Maybe in production you will be using subdomain for each vendor, but for simplify concept, i not using subdomain, but im using just body params.
 
-### Show Users
-- **URL**
+<details>
+  <summary>Show Users</summary>
+
+  - **URL**
 
   `/api/v1/users`
 
-- Method
+  - **Method**
 
-  `GET`
+    `GET`
 
-- **URL Params**
+  - **URL Params**
 
-  **Required**
+    **Required**
 
-  `vendor_id=[integer]`
+    `vendor_id=[integer]`
 
-- **Data Params**
+  - **Data Params**
 
-  None.
+    None.
 
-- **Success Response**
+  - **Success Response**
 
-  ```json
-  {
-    "users": [
-      {
-        "username": "mahou_kagami"
-      },
-      {
-        "username": "tomewo_awasu"
+    ```json
+    {
+      "users": [
+        {
+          "username": "mahou_kagami"
+        },
+        {
+          "username": "tomewo_awasu"
+        }
+      ]
+    }
+    ```
+
+  - **Note**
+
+    I think that will be clean if we pass the `vendor_id` in headers. But for now, i this it's enought :p.
+</details>
+
+
+<details>
+  <summary><b>Create New User</b> </summary>
+
+  - **URL**
+
+  `/api/v1/users`
+
+  - **Method**
+
+    `POST`
+
+  - **URL Params**
+
+    **Required**
+
+    `vendor_id=[integer]`
+
+  - **Data Params**
+
+    ```json
+    {
+      "user": {
+        "username": "kotoxri"
       }
-    ]
-  }
-  ```
-
-- **Note**
-  I think that will be clean if we pass the `vendor_id` in headers. But for now, i this it's enought :p.
-
-
-### Create New User
-- **URL**
-
-  `/api/v1/users`
-
-- Method
-
-  `POST`
-
-- **URL Params**
-
-  **Required**
-
-  `vendor_id=[integer]`
-
-- **Data Params**
-
-  ```json
-  {
-    "user": {
-      "username": "kotoxri"
     }
-  }
-  ```
+    ```
 
-- **Success Response**
+  - **Success Response**
 
-  ```json
-  {
-    "user": {
-      "username": "kotoxri"
+    ```json
+    {
+      "user": {
+        "username": "kotoxri"
+      }
     }
-  }
-  ```
+    ```
+
+  - **Notes**
+
+    None.
+</details>
 
 ## Note
 
