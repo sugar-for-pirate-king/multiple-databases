@@ -109,7 +109,7 @@ Migration still doesn't work in multiple databases, so we will use traditional e
    - `$> mysql -u root -p`
    - `$> CREATE DATABASE new_database_name`
    - `$> exit`
-   - `$> mysql -u [username] -p [new_database_name] < [database_name].sql``
+   - `$> mysql -u [username] -p [new_database_name] < [database_name].sql`
 
 ## License
 MIT License
