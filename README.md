@@ -16,7 +16,7 @@ This is not production project, that means this is just for experiment purpose.
 Maybe in production you will be using subdomain for each vendor, but for simplify concept, i not using subdomain, but im using just body params.
 
 <details>
-  <summary>Show Users</summary>
+  <summary><b>Show Users</b></summary>
 
   - **URL**
 
